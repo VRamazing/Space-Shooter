@@ -29,17 +29,17 @@ public class PlayerControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-//		float moveHorizontal = Input.GetAxis ("Horizontal");
-//		float moveVertical = Input.GetAxis ("Vertical");
-//		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
 
-//		Vector3 accelerationRaw = Input.acceleration;
-//		Vector3 acceleration = FixAcceleration (accelerationRaw);
-//		Vector3 movement = new Vector3 (acceleration.x, 0.0f, acceleration.y);
-		Vector2 direction = touchPad.GetDirection();
-		Vector3 movement = new Vector3 (direction.x, 0.0f, direction.y);
-		Rigidbody playerRigidBody = GetComponent<Rigidbody> ();
+        //Vector3 accelerationRaw = Input.acceleration;
+        //Vector3 acceleration = FixAcceleration(accelerationRaw);
+        //Vector3 movement = new Vector3(acceleration.x, 0.0f, acceleration.y);
+        //Vector2 direction = touchPad.GetDirection();
+        //Vector3 movement = new Vector3 (direction.x, 0.0f, direction.y);
+        Rigidbody playerRigidBody = GetComponent<Rigidbody> ();
 		playerRigidBody.velocity = movement * speed;
 		playerRigidBody.position = new Vector3 (
 			Mathf.Clamp (playerRigidBody.position.x, boundary.xMin, boundary.xMax),
